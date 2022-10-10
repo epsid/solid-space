@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
 }
 
-group = "my.fulltek.pet"
+group = "me.fulltek.pet"
 version = "1.0-SNAPSHOT"
 
 repositories {

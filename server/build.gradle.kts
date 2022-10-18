@@ -11,8 +11,10 @@ repositories {
     mavenCentral()
 }
 
+val mockkVersion = "1.13.2"
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("io.mockk:mockk:${mockkVersion}")
 }
 
 tasks.test {

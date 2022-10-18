@@ -1,18 +1,24 @@
 package my.fulltek.pet.solid.space.server
 
-import my.fulltek.pet.solid.space.server.data.MovableImpl
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
+import my.fulltek.pet.solid.space.server.command.impl.MoveCommand
 import my.fulltek.pet.solid.space.server.data.Vector
+import my.fulltek.pet.solid.space.server.`object`.Movable
 import org.junit.jupiter.api.Test
-import kotlin.test.assertTrue
 
 internal class MoveTest {
+
     @Test
     fun movingObjectTest() {
         val position = Vector(12, 5)
         val velocity = Vector(-7, 3)
-        val movableImpl = MovableImpl(position, velocity)
-        Move(movableImpl).execute()
-        assertTrue { movableImpl.getPosition().x == 5 && movableImpl.getPosition().y == 8 }
+        val movable = mockk<Movable>()
+        every { movable.getPosition() } returns position
+        every { movable.getVelocity() } returns velocity
+        val move = MoveCommand(movable)
+        move.execute()
+        verify { movable.getPosition().x == 5 && movable.getPosition().y == 7 }
     }
-
 }

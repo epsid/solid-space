@@ -1,4 +1,4 @@
-package my.fulltek.pet.solid.space.server
+package my.fulltek.pet.solid.space.server.`object`
 
 import my.fulltek.pet.solid.space.server.data.Vector
 

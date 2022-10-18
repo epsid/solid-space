@@ -4,7 +4,7 @@ import my.fulltek.pet.solid.space.server.`object`.UObject
 import my.fulltek.pet.solid.space.server.adapter.MovingCommandAdapter
 import my.fulltek.pet.solid.space.server.adapter.SpeedChangeableAdapter
 import my.fulltek.pet.solid.space.server.command.Command
-import my.fulltek.pet.solid.space.server.command.MoveCommandRunnable
+import my.fulltek.pet.solid.space.server.command.MoveCommandStartable
 import my.fulltek.pet.solid.space.server.service.MovableService
 import java.util.*
 
@@ -12,7 +12,7 @@ class StartMoveCommand(
     movingCommand: UObject, private val queue: Queue<Command>,
     private val movableService: MovableService
 ) :
-    MoveCommandRunnable<Command>, Command {
+    MoveCommandStartable<Command>, Command {
 
     private val movingCommandAdapter = MovingCommandAdapter(movingCommand)
     private val speedChangeableAdapter = SpeedChangeableAdapter(getMovingObject())

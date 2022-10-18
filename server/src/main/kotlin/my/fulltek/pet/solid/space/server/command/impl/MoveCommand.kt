@@ -6,8 +6,7 @@ import my.fulltek.pet.solid.space.server.data.Vector
 
 class MoveCommand(private val movable: Movable) : Command {
     override fun execute() {
-        movable.setPosition(
-            Vector.plus(movable.getPosition(), movable.getVelocity())
-        )
+        val newPosition = Vector.plus(movable.getPosition(), movable.getVelocity())
+        movable.setPosition(newPosition)
     }
 }

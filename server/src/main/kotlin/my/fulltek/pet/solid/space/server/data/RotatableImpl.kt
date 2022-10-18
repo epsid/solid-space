@@ -1,6 +1,6 @@
 package my.fulltek.pet.solid.space.server.data
 
-import my.fulltek.pet.solid.space.server.Rotatable
+import my.fulltek.pet.solid.space.server.`object`.Rotatable
 
 data class RotatableImpl(private var angle: Vector) : Rotatable {
 
